@@ -22,8 +22,8 @@ public class StudentController {
   @GetMapping("/studentList")
   public List<Student> gethStudentList() {
     return service.searchStudentList();
-    //変数でなくStudent studentなのか？
-    //表示
+
+    //サービス層のメソッドを呼び出し。searchStudentList()メソッドを呼び出し、戻り値を返す。<<実際にある
     //return student.getName() + " " + student.getAge() + "歳";
   }
 
