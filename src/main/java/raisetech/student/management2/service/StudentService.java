@@ -19,16 +19,17 @@ public class StudentService {
   }
 
   public List<Student> searchStudentList() {
-      return repository.search();
+  //    return repository.search();
 
-    //  return repository.search().stream()
-  //          .filter(student -> student.getAge() > 30).collect(Collectors.toList());
-  //return repository.search();
+      return repository.search().stream()
+          .filter(student -> student.getAge() >= 30 && student.getAge() < 40)
+          .collect(Collectors.toList());  //return repository.search();
 //ここで何か処理を行う
   }
 
   public List<Course> searchCourseList() {
-    return repository.searchCourses();
-
+    return repository.searchCourses().stream()
+        .filter(course -> course.getCourseName().contains("情報"))
+        .collect(Collectors.toList());
   }
 }
